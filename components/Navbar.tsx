@@ -3,13 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import {GoogleLogin,googleLogout} from '@react-oauth/google'
-import {AiOutlineLogin, AiOutlineLogout}from 'react-icons/ai';
+import {AiOutlineLogin, AiOutlineLogout ,AiOutlineCloudUpload}from 'react-icons/ai';
 import {BiSearch} from 'react-icons/bi';
 import {IoMdAdd} from 'react-icons/io'
 import Logo from '../utils/tiktik-logo.png'
 import { createOrGetUser } from '../utils'
 import useAuthStore from '../store/authStore';
-
 
 
 const Navbar = () => {
@@ -33,10 +32,8 @@ const Navbar = () => {
         <div>{userProfile?(
             <div className='flex gap-5 md:gap-10'>
               <Link href={"/upload"}>
-              <button className='flex gap-2 items-center text-md font-semibold border-2 px-2 md:px-4'>
-              <IoMdAdd className='text-xl'/>
-              {` `}
-              <span className='hidden md:block'>Upload</span>
+              <button className='flex gap-2 items-center justify-center text-md rounded-full font-semibold border-2 px-2 md:p-3'>
+              <AiOutlineCloudUpload color='red'/>
               </button>
               </Link>
               {userProfile.image && (

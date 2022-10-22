@@ -69,17 +69,18 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
             setIsHover(false);
           }}
         >
-          <Link href="/">
+          <Link href={`/detail/${post._id}`}> 
             <video
               loop
+              controls
               ref={videoRef}
-              className="h-[300px] w-[200px] cursor-pointer rounded-xl bg-gray-100 md:h=[400px] lg:w-[600px] lg:h-[530px]"
+              className="h-[300px] w-[200px] cursor-pointer rounded-xl bg-gray-100 md:h=[400px] lg:w-[700px] lg:h-[530px]"
               src={post.video.asset.url}
             ></video>
           </Link>
           {isHover && (
             <div className="absolute w-[40%] bottom-0 height=[20px] flex justify-evenly items-center">
-              {isPlaying ? (
+              {/* {isPlaying ? (
                 <button>
                   <BsFillPauseFill
                     className="text-black text-2xl lg:text-4xl"
@@ -107,7 +108,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                    onClick={()=>{setIsVideoMuted(true)}} 
                   className="text-black text-2xl lg:text-4xl" />
                 </button>
-              )}
+              )} */}
 
             </div>
           )}
