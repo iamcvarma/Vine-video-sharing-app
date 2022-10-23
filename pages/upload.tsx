@@ -7,6 +7,7 @@ import { SanityAssetDocument } from "@sanity/client";
 import useAuthStore from "../store/authStore";
 import { client } from "../utils/client";
 import { topics } from "../utils/constants";
+import { BASE_URL } from "../utils";
 
 const Upload = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -62,7 +63,7 @@ const Upload = () => {
         topic: category,
       };
 
-      await axios.post("http://localhost:3000/api/post", document);
+      await axios.post(`${BASE_URL}/api/post`, document);
       setSavingPost(false)
       router.push('/');
     }
@@ -107,7 +108,7 @@ const Upload = () => {
                         Up to 10 minutes <br />
                         Less than 500MB
                       </p>
-                      <p className="bg-[#F51997] text-center mt-10 rounded text-white text-md font-medium p-2 w-52 outline-none">
+                      <p className="bg-hotpink text-center mt-10 rounded text-white text-md font-medium p-2 w-52 outline-none">
                         Select File
                       </p>
                     </div>
@@ -167,7 +168,7 @@ const Upload = () => {
             <button
               onClick={handlePost}
               type="button"
-              className="bg-[#f51997] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
+              className="bg-hotpink text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
             >
               Post
             </button>

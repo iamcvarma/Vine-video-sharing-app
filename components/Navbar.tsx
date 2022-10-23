@@ -33,7 +33,7 @@ const Navbar = () => {
             <div className='flex gap-5 md:gap-10'>
               <Link href={"/upload"}>
               <button className='flex gap-2 items-center justify-center text-md rounded-full font-semibold border-2 px-2 md:p-3'>
-              <AiOutlineCloudUpload color='red'/>
+              <AiOutlineCloudUpload color='hotpink'/>
               </button>
               </Link>
               {userProfile.image && (
@@ -60,7 +60,7 @@ const Navbar = () => {
                 removeUser();
               }}
               >
-                  <AiOutlineLogout color='red' fontSize={20}/>
+                  <AiOutlineLogout color='hotpink' fontSize={20}/>
               </button>
             </div>
         ):

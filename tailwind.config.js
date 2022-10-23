@@ -29,6 +29,7 @@ module.exports = {
       },
       colors: {
         primary: 'rgb(22, 24, 35)',
+        hotpink: '#F51997'
       },
       height: {
         '88vh': '88vh',
