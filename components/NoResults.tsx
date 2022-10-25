@@ -1,12 +1,23 @@
 import React from 'react'
-
+import { MdOutlineVideocamOff } from 'react-icons/md'
+import {BiCommentX} from 'react-icons/bi'
 interface IProps {
     text:string;
+    comment?:boolean;
 }
 
-const NoResults = ({text}:IProps) => {
+const NoResults = ({text,comment}:IProps) => {
   return (
-    <div>{text}</div>
+    <div className='flex flex-col justify-center items-center h-full w-full text-gray-400'>
+      <p className='text-8xl'>{comment?(
+          <BiCommentX />
+      ):(
+          <MdOutlineVideocamOff />
+      )}</p>
+      <p className='text-2xl text-center'>
+        {text}
+      </p>
+    </div>
   )
 }
 
