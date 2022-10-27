@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 
+
 import '../styles/globals.css'
 
 const MyApp = ({ Component, pageProps }: AppProps)=> {
@@ -25,7 +26,9 @@ const MyApp = ({ Component, pageProps }: AppProps)=> {
             <Sidebar />
           </div>
           <div className='mt-4 flex flex-col gap-10 overflow-auto h-[88vh]  videos flex-1 '>
+        
             <Component {...pageProps} />
+           
           </div>
         </div>
 
@@ -33,6 +36,7 @@ const MyApp = ({ Component, pageProps }: AppProps)=> {
 
       </GoogleOAuthProvider>
     </div>
+   
   )
 }
 
