@@ -56,7 +56,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
           <div>
             <Link href={`/profile/${post.postedBy._id}`}>
               <div className="flex items-center gap-2">
-                <p className="flex gap-2 items-center ms:text-md font-bold text-primary">
+                <p className="flex gap-2 items-center ms:text-md font-bold text-primary dark:text-white">
                   {post.postedBy.userName}{" "}
                   <GoVerified className="text-blue-400 text-md" />
                 </p>
@@ -82,7 +82,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
             <video
               loop
               ref={videoRef}
-              className="h-[300px] w-[200px] cursor-pointer rounded-xl bg-gray-100 md:h=[400px] lg:w-[700px] lg:h-[530px]"
+              className="h-[300px] w-[200px] cursor-pointer rounded-xl bg-gray-100 md:h=[400px] lg:w-[700px] lg:h-[530px] dark:bg-darkgray"
               src={post.video.asset.url}
             ></video>
           </Link>
@@ -91,14 +91,14 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
               {isPlaying ? (
                 <button>
                   <BsFillPauseFill
-                    className="text-black text-2xl lg:text-4xl"
+                    className="text-white text-2xl lg:text-4xl"
                     onClick={onVideoPress}
                   />
                 </button>
               ) : (
                 <button>
                   <BsFillPlayFill
-                    className="text-black text-2xl lg:text-4xl"
+                    className="text-white text-2xl lg:text-4xl"
                     onClick={onVideoPress}
                   />
                 </button>
@@ -109,7 +109,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                     onClick={() => {
                       setIsVideoMuted(false);
                     }}
-                    className="text-black text-2xl lg:text-4xl"
+                    className="text-white text-2xl lg:text-4xl"
                   />
                 </button>
               ) : (
@@ -118,7 +118,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                     onClick={() => {
                       setIsVideoMuted(true);
                     }}
-                    className="text-black text-2xl lg:text-4xl"
+                    className="text-white text-2xl lg:text-4xl"
                   />
                 </button>
               )}

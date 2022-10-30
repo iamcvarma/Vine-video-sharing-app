@@ -16,8 +16,7 @@ function Footer() {
     <div className='mt-6 hidden xl:block'>
         <Link items={footerList1} mt={false}/>
         <Link items={footerList2} mt={true}/>
-        <Link items={footerList3} mt = {true}/>
-        <p className='text-gray-400 text-sm mt-5'>2022 TikTik (By Chaitanya Varma)</p>
+        <p className='text-gray-400 text-sm mt-5'>2022 Chaitanya Varma</p>
     </div>
   )
 }

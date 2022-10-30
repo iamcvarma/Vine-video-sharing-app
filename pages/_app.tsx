@@ -8,19 +8,22 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import '../styles/globals.css'
 
 const MyApp = ({ Component, pageProps }: AppProps)=> {
-
   const [isSSR,setIsSSR] = useState(true)
+  const [darkMode,setDarkMode] = useState(false)
   useEffect(()=>{
     setIsSSR(false);
   },[])
-
+  
   if (isSSR) return null;
+
   return (
-    <div>
+    <div className={`${darkMode?"dark":""}`}>
+      <div className='dark:bg-dblack'>
+
       <GoogleOAuthProvider clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}>
         <div className='m-auto overflow-hidden h-[100vh]'>
 
-        <Navbar />
+        <Navbar setDarkMode={setDarkMode} darkMode={darkMode}/>
         <div className='flex gap-6 md:gap-20'>
           <div className='h-[92vh] overflow-hidden xl:hover:overflow-auto xl:ml-[120px]'>
             <Sidebar />
@@ -35,6 +38,7 @@ const MyApp = ({ Component, pageProps }: AppProps)=> {
         </div>
 
       </GoogleOAuthProvider>
+      </div>
     </div>
    
   )

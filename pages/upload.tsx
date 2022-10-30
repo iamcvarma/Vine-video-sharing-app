@@ -71,29 +71,29 @@ const Upload = () => {
   };
 
   return (
-    <div className="flex w-full h-full absolute left-0 top-[60px] mb-10 pt-10 lg:pt-20 bg-[#f8f8f8] justify-center ">
-      <div className="bg-white w-[70%] rounded-lg xl:h-[80vh] flex gap-6 flex-wrap justify-evenly items-center p-14 pt-6">
+    <div className="flex w-full h-full absolute left-0 top-[60px] mb-10 pt-10 lg:pt-20 bg-[#f8f8f8] justify-center dark:bg-black mt-2">
+      <div className="bg-white w-[70%] rounded-lg xl:h-[80vh] flex gap-6 flex-wrap justify-evenly items-center p-14 pt-6 dark:bg-darkgray">
         <div>
           <div>
-            <p className="text-2x font-bold">Upload Video</p>
+            <p className="text-2x font-bold dark:text-white">Upload Video</p>
             <p className="text-md text-gray-400 mt-1">
               Post a video to your account
             </p>
           </div>
-          <div className="border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] cursor-pointer hover:border-red-300 hover:bg-gray-100">
+          <div className="border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] cursor-pointer hover:border-red-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white">
             {isLoading ? (
               <div>Loading...</div>
             ) : (
               <div>
                 {videoAsset ? (
-                  <div>
+                  
                     <video
                       src={videoAsset.url}
                       loop
                       controls
-                      className="rounded-xl h-[450px] bg-black mt-16"
+                      className="rounded-xl h-[450px] bg-black"
                     ></video>
-                  </div>
+                  
                 ) : (
                   <label className="cursor-pointer">
                     <div className="flex flex-col justify-center items-center h-full">
@@ -130,29 +130,29 @@ const Upload = () => {
             )}
           </div>
         </div>
-        <div className="flex flex-col gap-3 pb-10">
-          <label className="text-md font-medium">Caption</label>
+        <div className="flex flex-col gap-3 pb-10 dark:text-white">
+          <label className="text-md font-medium ">Caption</label>
           <input
             type="text"
             value={caption}
             onChange={(e) => {
               setCaption(e.target.value);
             }}
-            className="rounded outline-none text-md border-2 border-gray-200 p-2"
+            className="rounded outline-none text-md border-2 border-gray-200 p-2 dark:bg-black"
           />
-          <label className="text-md font-medium">Select a Category</label>
+          <label className="text-md font-medium ">Select a Category</label>
           <select
             value={category}
             onChange={(e) => {
               setCategory(e.target.value);
             }}
-            className="outline-none border-2 border-gray-200 text-md capitilize lg:p-4 p-2 rounded cursor-pointer capitalize"
+            className="outline-none border-2 border-gray-200 text-md capitilize lg:p-4 p-2 rounded cursor-pointer capitalize dark:bg-black"
           >
             {topics.map((topic) => (
               <option
                 key={topic.name}
                 value={topic.name}
-                className="capitalize outline-none bg-white text-gray-700 text-md hover:bg-slate-300"
+                className="capitalize outline-none bg-white text-gray-700 text-md hover:bg-slate-300 dark:bg-black dark:text-white"
               >
                 {topic.name.toUpperCase()}
               </option>

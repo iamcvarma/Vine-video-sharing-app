@@ -17,15 +17,15 @@ const Search = ({ videos }: { videos: Video[] }) => {
   const router = useRouter();
   const { allUsers } = useAuthStore();
   const { searchTerm }: any = router.query;
-  const accounts = isAccounts ? "border-b-2 border-black " : "text-gray-400";
-  const video = !isAccounts ? "border-b-2 border-black " : "text-gray-400";
+  const accounts = isAccounts ? "border-b-2 border-black dark:text-white " : "text-gray-500";
+  const video = !isAccounts ? "border-b-2 border-black dark:text-white" : "text-gray-500";
   const searchedUsers = allUsers.filter((user: IUser) =>
     user.userName.toLocaleLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="w-full">
-      <div className="flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-white w-full">
+      <div className="flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-white w-full dark:bg-transparent">
         <p
           className={`text-xl font-semibold cursor-pointer mt-2 ${accounts}`}
           onClick={() => setIsAccounts(true)}

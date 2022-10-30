@@ -20,8 +20,8 @@ const Profile = ({data}:IProps) =>{
     const [showUserVideos,setShowUserVideos] = useState(true)
     const {user,userVideos,userLikedVideos} = data
     const [videoList,setVideoList] = useState<Video[]>([])
-    const videos = showUserVideos? "border-b-2 border-black ":"text-gray-400"
-    const liked = !showUserVideos? "border-b-2 border-black ":"text-gray-400"
+    const videos = showUserVideos? "border-b-2 border-black dark:text-white ":"text-gray-600"
+    const liked = !showUserVideos? "border-b-2 border-black dark:text-white ":"text-gray-600"
 
     useEffect(()=>{
         if (showUserVideos) {
@@ -32,7 +32,7 @@ const Profile = ({data}:IProps) =>{
     },[showUserVideos,userVideos,userLikedVideos])
     return (
         <div className='w-full'>
-            <div className='flex gap-6 md:gap-10 mb-4 bg-white w-full'>
+            <div className='flex gap-6 md:gap-10 mb-4 bg-transparent w-full items-center'>
             <div className='w-16 h-16 md:w-32 md:h-32'>
                 <Image 
                   src = {user.image}
@@ -44,7 +44,7 @@ const Profile = ({data}:IProps) =>{
                 />
               </div>
               <div className='flex flex-col justify-center '>
-                <p className=' md:text-2xl tracking-wider flex gap-1 items-center justify-center text-md font-bold lowercase text-primary'>
+                <p className=' md:text-2xl tracking-wider flex gap-1 items-center justify-center text-md font-bold lowercase text-primary dark:text-white'>
                 {user.userName.replaceAll(' ','')}
                 < GoVerified className='text-blue-400'/>
                 </p>
@@ -54,7 +54,7 @@ const Profile = ({data}:IProps) =>{
               </div>
             </div>
             <div>
-                <div className='flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-white w-full'>
+                <div className='flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-transparent w-full'>
                     <p className={`text-xl font-semibold cursor-pointer mt-2 ${videos}`} 
                         onClick={()=>setShowUserVideos(true)}>
                         Videos

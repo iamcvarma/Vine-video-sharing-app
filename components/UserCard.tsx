@@ -7,8 +7,8 @@ import { IUser } from "../types";
 const UserCard = ({user}:{user:IUser}) => {
   return (
       <Link href={`/profile/${user._id}`}>
-        <div className="flex items-start gap-3">
-          <div className="flex gap-3 hover:bg-primary p-2 cursor-pointer font-semibold rounded">
+        <div className="flex items-start gap-3 w-full ">
+          <div className="flex gap-3 hover:bg-primary dark:bg-darkgray p-2 cursor-pointer font-semibold rounded w-full">
             <div className="w-8 h-8">
               <Image
                 src={user.image}
@@ -20,7 +20,7 @@ const UserCard = ({user}:{user:IUser}) => {
               />
             </div>
             <div className="hidden xl:block">
-              <p className="flex gap-1 items-center text-md font-bold lowercase text-primary">
+              <p className="flex gap-1 items-center text-md font-bold lowercase text-primary dark:text-white">
                 {user.userName.replaceAll(" ", "")}
                 <GoVerified className="text-blue-400" />
               </p>

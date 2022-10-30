@@ -31,7 +31,7 @@ interface IComment{
 const Comments = ({comment,setComment,addComment,comments,isPostingComment}:IProps) => {
   const {userProfile,allUsers} = useAuthStore();
   return (
-    <div className='border-t-2 border-gray-200 pt-4 px-10 bg-[#F8F8F8] border-b-2 lg:pb-0 pb-[100px]'>
+    <div className='border-t-2 border-gray-200 pt-4 px-10 bg-[#F8F8F8] border-b-2 lg:pb-0 pb-[100px] dark:bg-dblack'>
       <div className='overflow-auto lg:h-[475px]'>
         {comments?.length >0 ? (
           comments.map((item:IComment,idx:number)=>(
@@ -41,7 +41,7 @@ const Comments = ({comment,setComment,addComment,comments,isPostingComment}:IPro
                   <div className='p-2 items-center' key={idx}>
                     <UserCard user={user}></UserCard>
                   <div>
-                    <p className='ml-11'>
+                    <p className='ml-11 dark:text-white'>
                       {item.comment}
                     </p>
                   </div>
@@ -61,7 +61,7 @@ const Comments = ({comment,setComment,addComment,comments,isPostingComment}:IPro
               value={comment}
               onChange={(e)=>setComment(e.target.value)}
               placeholder="Add a comment..."
-              className='bg-primary px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[400px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg'
+              className='bg-primary dark:bg-darkgray dark:text-white px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[400px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg'
             />
             <button className='text-md text-gray-400' onClick={addComment}>
               {isPostingComment?"Commenting...":"Comment"}
