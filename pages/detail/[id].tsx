@@ -19,8 +19,7 @@ interface IProps {
 
 const Detail = ({ postDetails }: IProps) => {
   const [post, setPost] = useState(postDetails);
-  if (!post) return null;
-
+  
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoMuted, setIsVideoMuted] = useState(false);
@@ -28,7 +27,8 @@ const Detail = ({ postDetails }: IProps) => {
   const { userProfile }: any = useAuthStore();
   const [comment,setComment] = useState('')
   const [isPostingComment,setIsPostingComment] = useState(false)
-
+  
+  
   useEffect(() => {
     if (post && videoRef?.current) {
       videoRef.current.muted = isVideoMuted;
@@ -71,7 +71,7 @@ const Detail = ({ postDetails }: IProps) => {
       videoRef?.current?.play();
     }
   }
-
+  if (!post) return null;
   return (
     <div className="flex w-full absolute left-0 top-0 bg-white dark:bg-dblack flex-wrap lg:flex-nowrap">
       <div className="relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-blurred-img bg-no-repeat bg-cover bg-center">

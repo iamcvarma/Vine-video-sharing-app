@@ -42,9 +42,9 @@ const Search = ({ videos }: { videos: Video[] }) => {
       {isAccounts ? (
         <div className="md:mt-16 flex flex-col">
           {searchedUsers.length > 0 ? (
-            searchedUsers.map((user: IUser, idx: number) => (
+            searchedUsers.map((user: IUser, ) => (
               <div className="w-full border-b-2 p-2 md:p-4 border-gray-200">
-                <UserCard user={user} key={idx} />
+                <UserCard user={user} key={user._id} />
               </div>
             ))
           ) : (
@@ -54,8 +54,8 @@ const Search = ({ videos }: { videos: Video[] }) => {
       ) : (
         <div className="md:mt-16 flex flex-wrap gap-6 md:justify-start">
           {videos.length > 0 ? (
-            videos.map((video: Video, idx: number) => (
-              <VideoCard post={video} key={idx} />
+            videos.map((video: Video) => (
+              <VideoCard post={video} key={video._id} />
             ))
           ) : (
             <NoResults text={`No Results for ${searchTerm}`} />
