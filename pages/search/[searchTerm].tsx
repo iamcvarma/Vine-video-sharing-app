@@ -42,9 +42,9 @@ const Search = ({ videos }: { videos: Video[] }) => {
       {isAccounts ? (
         <div className="md:mt-16 flex flex-col">
           {searchedUsers.length > 0 ? (
-            searchedUsers.map((user: IUser, ) => (
-              <div className="w-full border-b-2 p-2 md:p-4 border-gray-200">
-                <UserCard user={user} key={user._id} />
+            searchedUsers.map((user: IUser ) => (
+              <div key={user._id} className="w-full border-b-2 p-2 md:p-4 border-gray-200">
+                <UserCard user={user} />
               </div>
             ))
           ) : (

@@ -20,7 +20,7 @@ function SuggestedAccounts() {
       <p className='text-gray-500 font-semibold hidden xl:block m-3 mt-4'>Suggested Accounts</p>
       <div>
         {allUsers.slice(0,6).map((user:IUser)=>(
-          <UserCard user ={user}/>
+          <UserCard user ={user} key={user._id}/>
         ))}
       </div>
     </div>
